@@ -652,6 +652,14 @@ main (int argc, char *argv [])
 		test_count++ ;
 		} ;
 
+	if (do_all || strcmp (argv [1], "msadpcm_seek") == 0)
+	{	write_seek_test ("msadpcm.wav", SF_FORMAT_WAV | SF_FORMAT_MS_ADPCM, 2) ;
+		/* Lite remove start */
+		write_seek_test ("msadpcm.w64", SF_FORMAT_W64 | SF_FORMAT_MS_ADPCM, 2) ;
+		/* Lite remove end */
+		test_count++ ;
+		} ;
+
 	if (test_count == 0)
 	{	printf ("************************************\n") ;
 		printf ("*  No '%s' test defined.\n", argv [1]) ;

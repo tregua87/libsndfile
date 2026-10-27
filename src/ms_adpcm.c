@@ -477,7 +477,12 @@ msadpcm_seek	(SF_PRIVATE *psf, int mode, sf_count_t offset)
 		} ;
 
 	if (offset == 0)
-	{	psf_fseek (psf, psf->dataoffset, SEEK_SET) ;
+	{	if (mode != SFM_READ)
+		{	psf->error = SFE_BAD_SEEK ;
+			return PSF_SEEK_ERROR ;
+			} ;
+
+		psf_fseek (psf, psf->dataoffset, SEEK_SET) ;
 		pms->blockcount = 0 ;
 		msadpcm_decode_block (psf, pms) ;
 		pms->samplecount = 0 ;

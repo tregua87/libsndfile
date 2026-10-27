@@ -187,6 +187,12 @@ echo "----------------------------------------------------------------------"
 echo "  $sfversion passed IMA ADPCM seek tests."
 echo "----------------------------------------------------------------------"
 
+# ms-adpcm-tests (all containers)
+./tests/lossy_comp_test@EXEEXT@ msadpcm_seek
+echo "----------------------------------------------------------------------"
+echo "  $sfversion passed MS ADPCM seek tests."
+echo "----------------------------------------------------------------------"
+
 # rf64-tests
 ./tests/write_read_test@EXEEXT@ rf64
 ./tests/header_test@EXEEXT@ rf64

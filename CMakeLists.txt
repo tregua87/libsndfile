@@ -1435,6 +1435,9 @@ if (BUILD_TESTING)
 	### ima-adpcm-tests (all containers)
 	add_test (lossy_comp_test_ima_seek lossy_comp_test ima_seek)
 
+	### ms-adpcm-tests (all containers)
+	add_test (lossy_comp_test_msadpcm_seek lossy_comp_test msadpcm_seek)
+
 	### rf64-tests
 
 	add_test (write_read_test_rf64 write_read_test rf64)
